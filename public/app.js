@@ -47,6 +47,7 @@ function clearSession() {
 }
 
 function setAuthenticated(isAuthed) {
+  $(".shell").classList.toggle("auth-mode", !isAuthed);
   $("#authView").classList.toggle("hidden", isAuthed);
   $("#appView").classList.toggle("hidden", !isAuthed);
   $(".sidebar").classList.toggle("hidden", !isAuthed);

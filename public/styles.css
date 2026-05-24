@@ -65,6 +65,10 @@ button.danger {
   grid-template-columns: 260px 1fr;
 }
 
+.shell.auth-mode {
+  display: block;
+}
+
 .sidebar {
   background: #101820;
   color: #fff;
@@ -121,6 +125,10 @@ button.danger {
 
 .workspace {
   min-width: 0;
+}
+
+.auth-mode .workspace {
+  width: 100%;
 }
 
 .auth-view {
