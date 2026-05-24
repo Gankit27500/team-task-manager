@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Task Manager</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">TT</span>
+          <div>
+            <strong>Team Task</strong>
+            <small>Manager</small>
+          </div>
+        </div>
+        <nav class="nav">
+          <button class="nav-button active" data-view="dashboard">Dashboard</button>
+          <button class="nav-button" data-view="projects">Projects</button>
+          <button class="nav-button" data-view="tasks">Tasks</button>
+        </nav>
+        <div class="account" id="accountPanel"></div>
+      </aside>
+
+      <section class="workspace">
+        <section class="auth-view" id="authView">
+          <div class="auth-card">
+            <h1>Team Task Manager</h1>
+            <p>Create projects, invite members, assign work, and track delivery from one focused dashboard.</p>
+            <div class="tabs">
+              <button class="tab active" data-auth-tab="login">Login</button>
+              <button class="tab" data-auth-tab="signup">Signup</button>
+            </div>
+            <form id="loginForm" class="auth-form">
+              <label>Email <input type="email" name="email" required /></label>
+              <label>Password <input type="password" name="password" required /></label>
+              <button type="submit">Login</button>
+            </form>
+            <form id="signupForm" class="auth-form hidden">
+              <label>Name <input type="text" name="name" required /></label>
+              <label>Email <input type="email" name="email" required /></label>
+              <label>Password <input type="password" name="password" minlength="6" required /></label>
+              <button type="submit">Create account</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="app-view hidden" id="appView">
+          <header class="topbar">
+            <div>
+              <h1 id="viewTitle">Dashboard</h1>
+              <p id="viewSubtitle">A current view of your projects and assigned work.</p>
+            </div>
+            <button id="refreshButton" class="secondary">Refresh</button>
+          </header>
+
+          <section id="dashboardView" class="view"></section>
+          <section id="projectsView" class="view hidden"></section>
+          <section id="tasksView" class="view hidden"></section>
+        </section>
+      </section>
+    </main>
+    <div id="toast" class="toast hidden"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
